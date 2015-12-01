@@ -180,6 +180,10 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         //Add new Meme to array on the Application Delegate
         (UIApplication.sharedApplication().delegate as!AppDelegate).memes.append(meme)
+        
+        print("Saved")
+        
+        print("\((UIApplication.sharedApplication().delegate as!AppDelegate).memes))")
     }
     
     @IBAction func shareImage(sender: UIBarButtonItem) {

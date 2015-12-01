@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Meme Table View-->
         <scene sceneID="XuY-8h-vzN">
             <objects>
-                <tableViewController storyboardIdentifier="tbc" id="2uy-Bb-7lS" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="tbc" title="Meme Table View" id="2uy-Bb-7lS" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RPw-Fl-rZM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -48,7 +48,13 @@
                             <outlet property="delegate" destination="2uy-Bb-7lS" id="rSx-F5-CLa"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rs9-m6-79I"/>
+                    <navigationItem key="navigationItem" title="Meme This" id="rs9-m6-79I">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ehz-Vg-TO2">
+                            <connections>
+                                <segue destination="cVt-ku-uaW" kind="presentation" id="kwV-uM-2hg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCm-bZ-lZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,16 +114,8 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="134" height="137"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jzs-k0-fQN">
-                                            <rect key="frame" x="0.0" y="0.0" width="134" height="137"/>
-                                        </imageView>
-                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <outlet property="memeImageDisplay" destination="Jzs-k0-fQN" id="dOx-AW-kcM"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -125,7 +123,16 @@
                             <outlet property="delegate" destination="IhN-yf-EeP" id="z2p-aB-eSE"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Meme This" id="h7j-Lt-mas"/>
+                    <navigationItem key="navigationItem" title="Meme This" id="h7j-Lt-mas">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uGv-eb-7l0">
+                            <connections>
+                                <segue destination="cVt-ku-uaW" kind="presentation" id="lt2-ac-1oy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="2Qn-af-Okj" id="Opv-xk-fX6"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZD-XB-enj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,6 +236,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wbF-WM-V2l" secondAttribute="trailing" constant="37" id="tBs-oJ-yPm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="kRH-Ia-nAm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="bottomTextView" destination="wbF-WM-V2l" id="kZn-9J-nBz"/>
@@ -249,4 +257,7 @@
         <image name="collection" width="30" height="30"/>
         <image name="table" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lt2-ac-1oy"/>
+    </inferredMetricsTieBreakers>
 </document>
