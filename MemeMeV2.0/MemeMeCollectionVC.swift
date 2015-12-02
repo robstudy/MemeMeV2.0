@@ -25,7 +25,8 @@ class MemeMeCollectionVC: UICollectionViewController {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        //self.clearsSelectionOnViewWillAppear = false
+        self.collectionView?.backgroundColor = UIColor.whiteColor()
 
         // Register cell classes
         self.collectionView!.registerClass(MemeCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
@@ -38,10 +39,9 @@ class MemeMeCollectionVC: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        
+        print(memes.count/3)
+        print(abs(memes.count/3))
         self.collectionView!.reloadData()
-        print("Reload")
-        print(memes.count)
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,8 +49,6 @@ class MemeMeCollectionVC: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-
     /*
     // MARK: - Navigation
 
@@ -65,30 +63,30 @@ class MemeMeCollectionVC: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return memes.count
+        if(memes.count/3 < 2){
+            return 1
+        }
+        return memes.count/3
     }
-
-
+    
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return memes.count
+        if(section < 4){
+            return memes.count
+        } else {
+            return 3
+        }
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MemeCollectionViewCell
         
-        let reloadMemes = (UIApplication.sharedApplication().delegate as! AppDelegate).memes
-        
-        let meme = reloadMemes[indexPath.item]
+        let meme = memes[indexPath.item]
     
-        let imageView = UIImageView(image: meme.image)
+        let imageView = UIImageView(image: meme.memeImage)
         cell.backgroundView = imageView
     
         return cell
-    }
-    
-    func showMemeMeVC() {
-        //presentViewController(MemeMeViewController, animated: true, completion: nil)
     }
 
     // MARK: UICollectionViewDelegate
@@ -121,7 +119,4 @@ class MemeMeCollectionVC: UICollectionViewController {
     
     }
     */
-    
-
-
 }

@@ -75,6 +75,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         topTextView.text = "TOP"
         bottomTextView.text = "BOTTOM"
         shareButton.enabled = false
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: - ImagePicker Delegate Controls
@@ -183,7 +184,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         print("Saved")
         
-        print("\((UIApplication.sharedApplication().delegate as!AppDelegate).memes))")
+        //print("\((UIApplication.sharedApplication().delegate as!AppDelegate).memes))")
     }
     
     @IBAction func shareImage(sender: UIBarButtonItem) {
