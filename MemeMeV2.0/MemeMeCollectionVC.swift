@@ -39,8 +39,6 @@ class MemeMeCollectionVC: UICollectionViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        print(memes.count/3)
-        print(abs(memes.count/3))
         self.collectionView!.reloadData()
     }
 
@@ -63,10 +61,7 @@ class MemeMeCollectionVC: UICollectionViewController {
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        if(memes.count/3 < 2){
-            return 1
-        }
-        return memes.count/3
+        return 1
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

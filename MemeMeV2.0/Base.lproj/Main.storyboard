@@ -28,19 +28,50 @@
         <!--Meme Table View-->
         <scene sceneID="XuY-8h-vzN">
             <objects>
-                <tableViewController storyboardIdentifier="tbc" title="Meme Table View" id="2uy-Bb-7lS" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="RPw-Fl-rZM">
+                <tableViewController storyboardIdentifier="tbc" title="Meme Table View" id="2uy-Bb-7lS" customClass="MemeTableVC" customModule="MemeMeV2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" id="RPw-Fl-rZM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeTable" id="BTH-Ve-Bj2">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memeTableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeTableCell" rowHeight="94" id="DDM-90-c8M" customClass="MemeTVCell" customModule="MemeMeV2_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BTH-Ve-Bj2" id="3OF-r1-IcF">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="DDM-90-c8M" id="a5E-Es-Kh6">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mH6-sw-p8m">
+                                            <rect key="frame" x="169" y="-1" width="423" height="94"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="94" id="qPs-bh-MnK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-FK-KqQ">
+                                            <rect key="frame" x="23" y="0.0" width="150" height="94"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="7IN-TO-8H9"/>
+                                                <constraint firstAttribute="height" constant="94" id="LQ4-5D-Jym"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="fkz-FK-KqQ" firstAttribute="leading" secondItem="a5E-Es-Kh6" secondAttribute="leadingMargin" constant="15" id="264-gx-p2s"/>
+                                        <constraint firstAttribute="bottom" secondItem="mH6-sw-p8m" secondAttribute="bottom" id="4uO-ZA-Gmc"/>
+                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="leading" secondItem="fkz-FK-KqQ" secondAttribute="trailing" id="F7G-fV-Zwb"/>
+                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="top" secondItem="a5E-Es-Kh6" secondAttribute="topMargin" id="LR0-A3-A2n"/>
+                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="height" secondItem="fkz-FK-KqQ" secondAttribute="height" id="bEp-mK-cRf"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="mH6-sw-p8m" secondAttribute="trailing" id="gY6-rO-m0P"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mH6-sw-p8m" secondAttribute="bottom" id="j3B-xx-U8K"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="memeImage" destination="fkz-FK-KqQ" id="N2c-aR-Mto"/>
+                                    <outlet property="memeText" destination="mH6-sw-p8m" id="rdQ-Ys-qVi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -258,6 +289,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lt2-ac-1oy"/>
+        <segue reference="kwV-uM-2hg"/>
     </inferredMetricsTieBreakers>
 </document>
