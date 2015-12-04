@@ -158,6 +158,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         //Hide ToolBars when generating image
         picToolBar.hidden = true
         stateToolBar.hidden = true
+        pickImage.contentMode = UIViewContentMode.ScaleAspectFill
         
         //Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)

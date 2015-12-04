@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -29,43 +30,39 @@
         <scene sceneID="XuY-8h-vzN">
             <objects>
                 <tableViewController storyboardIdentifier="tbc" title="Meme Table View" id="2uy-Bb-7lS" customClass="MemeTableVC" customModule="MemeMeV2_0" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="94" sectionHeaderHeight="28" sectionFooterHeight="28" id="RPw-Fl-rZM">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="23" sectionFooterHeight="28" id="RPw-Fl-rZM">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="memeTableCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="memeTableCell" rowHeight="94" id="DDM-90-c8M" customClass="MemeTVCell" customModule="MemeMeV2_0" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="94"/>
+                                <rect key="frame" x="0.0" y="87" width="600" height="94"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="DDM-90-c8M" id="a5E-Es-Kh6">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DDM-90-c8M" id="a5E-Es-Kh6">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mH6-sw-p8m">
-                                            <rect key="frame" x="169" y="-1" width="423" height="94"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="mH6-sw-p8m">
+                                            <rect key="frame" x="181" y="18" width="411" height="50"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="94" id="qPs-bh-MnK"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-FK-KqQ">
-                                            <rect key="frame" x="23" y="0.0" width="150" height="94"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkz-FK-KqQ">
+                                            <rect key="frame" x="23" y="8" width="150" height="77"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="7IN-TO-8H9"/>
-                                                <constraint firstAttribute="height" constant="94" id="LQ4-5D-Jym"/>
+                                                <constraint firstAttribute="width" secondItem="fkz-FK-KqQ" secondAttribute="height" multiplier="150:77" id="DPd-9R-bwR"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="fkz-FK-KqQ" firstAttribute="leading" secondItem="a5E-Es-Kh6" secondAttribute="leadingMargin" constant="15" id="264-gx-p2s"/>
-                                        <constraint firstAttribute="bottom" secondItem="mH6-sw-p8m" secondAttribute="bottom" id="4uO-ZA-Gmc"/>
-                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="leading" secondItem="fkz-FK-KqQ" secondAttribute="trailing" id="F7G-fV-Zwb"/>
-                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="top" secondItem="a5E-Es-Kh6" secondAttribute="topMargin" id="LR0-A3-A2n"/>
-                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="height" secondItem="fkz-FK-KqQ" secondAttribute="height" id="bEp-mK-cRf"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="mH6-sw-p8m" secondAttribute="trailing" id="gY6-rO-m0P"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="mH6-sw-p8m" secondAttribute="bottom" id="j3B-xx-U8K"/>
+                                        <constraint firstItem="fkz-FK-KqQ" firstAttribute="bottom" secondItem="a5E-Es-Kh6" secondAttribute="bottomMargin" id="PV9-qA-qJR"/>
+                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="trailing" secondItem="a5E-Es-Kh6" secondAttribute="trailingMargin" id="R8u-BC-Bes"/>
+                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="leading" secondItem="fkz-FK-KqQ" secondAttribute="trailing" constant="8" id="WOW-4D-mzM"/>
+                                        <constraint firstItem="mH6-sw-p8m" firstAttribute="top" secondItem="a5E-Es-Kh6" secondAttribute="topMargin" constant="10" id="YBc-ME-Obj"/>
+                                        <constraint firstItem="fkz-FK-KqQ" firstAttribute="leading" secondItem="a5E-Es-Kh6" secondAttribute="leadingMargin" constant="15" id="euK-Tr-nfY"/>
+                                        <constraint firstItem="fkz-FK-KqQ" firstAttribute="top" secondItem="a5E-Es-Kh6" secondAttribute="topMargin" id="fva-CN-FFw"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="mH6-sw-p8m" secondAttribute="bottom" constant="17" id="vmA-Wo-jli"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -181,9 +178,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v28-GE-4Oy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="648"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wbF-WM-V2l">
                                 <rect key="frame" x="57" y="658" width="300" height="34"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -246,6 +240,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="EkP-ap-gRI"/>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="v28-GE-4Oy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -253,7 +250,9 @@
                             <constraint firstItem="v28-GE-4Oy" firstAttribute="top" secondItem="fcy-KR-wuz" secondAttribute="bottom" id="5hU-E6-0Yp"/>
                             <constraint firstItem="fcy-KR-wuz" firstAttribute="top" secondItem="Dnh-fH-wHM" secondAttribute="topMargin" id="Brs-Og-V0b"/>
                             <constraint firstItem="6RK-x7-rcW" firstAttribute="leading" secondItem="Dnh-fH-wHM" secondAttribute="leadingMargin" constant="37" id="Jk3-Ws-Q59"/>
+                            <constraint firstItem="YZT-b0-dsO" firstAttribute="top" secondItem="v28-GE-4Oy" secondAttribute="bottom" id="PUv-H0-VeF"/>
                             <constraint firstItem="wbF-WM-V2l" firstAttribute="leading" secondItem="Dnh-fH-wHM" secondAttribute="leadingMargin" constant="37" id="TCk-o2-ICU"/>
+                            <constraint firstItem="v28-GE-4Oy" firstAttribute="top" secondItem="Dnh-fH-wHM" secondAttribute="topMargin" id="Wgj-ux-0yt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6RK-x7-rcW" secondAttribute="trailing" constant="37" id="X9W-rz-Qng"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wFS-Sr-heg" secondAttribute="trailing" constant="-20" id="ba4-Dh-fqL"/>
                             <constraint firstItem="YZT-b0-dsO" firstAttribute="top" secondItem="wFS-Sr-heg" secondAttribute="bottom" id="fBS-tG-SzV"/>
@@ -266,6 +265,12 @@
                             <constraint firstItem="wFS-Sr-heg" firstAttribute="leading" secondItem="Dnh-fH-wHM" secondAttribute="leadingMargin" constant="-20" id="qOq-wM-2b3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wbF-WM-V2l" secondAttribute="trailing" constant="37" id="tBs-oJ-yPm"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5hU-E6-0Yp"/>
+                                <exclude reference="4wx-u7-uDZ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="kRH-Ia-nAm"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
@@ -289,6 +294,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kwV-uM-2hg"/>
+        <segue reference="lt2-ac-1oy"/>
     </inferredMetricsTieBreakers>
 </document>
