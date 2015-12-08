@@ -16,6 +16,8 @@ class MemeTableVC: UITableViewController {
         //return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
         return appDelegate.memes
     }
+    
+    var sendMemeImage: UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +70,27 @@ class MemeTableVC: UITableViewController {
         
         return cell
     }
+    
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let meme = memes[indexPath.item]
+        setDataImage(meme.memeImage!)
+        performSegueWithIdentifier("showMemeImage", sender: self)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showMemeImage"){
+            let memeDVC:MemeDVC = segue.destinationViewController as! MemeDVC
+            let data = sendMemeImage
+            memeDVC.holdImage = data
+        }
+    }
+    
+    func setDataImage(sendImage: UIImage){
+        sendMemeImage = sendImage
+    }
+    
 
 
     /*

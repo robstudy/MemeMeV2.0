@@ -19,6 +19,7 @@
 		DF9FAFFC1C0CA16200AB41C4 /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9FAFFA1C0CA16200AB41C4 /* MemeCollectionViewCell.swift */; };
 		DF9FAFFE1C0CA17100AB41C4 /* MemeMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9FAFFD1C0CA17100AB41C4 /* MemeMeViewController.swift */; };
 		DF9FB0301C0CAD7100AB41C4 /* MemeMeCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9FB02F1C0CAD7100AB41C4 /* MemeMeCollectionVC.swift */; };
+		DFF6697A1C16AE4B007AEF46 /* MemeDVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF669791C16AE4B007AEF46 /* MemeDVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		DF9FAFFA1C0CA16200AB41C4 /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DF9FAFFD1C0CA17100AB41C4 /* MemeMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeMeViewController.swift; sourceTree = "<group>"; };
 		DF9FB02F1C0CAD7100AB41C4 /* MemeMeCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeMeCollectionVC.swift; sourceTree = "<group>"; };
+		DFF669791C16AE4B007AEF46 /* MemeDVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeDVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				DF9FAFFA1C0CA16200AB41C4 /* MemeCollectionViewCell.swift */,
 				DF1ECC2B1C109599003431ED /* MemeTableVC.swift */,
 				DF1ECC2D1C109D4F003431ED /* MemeTVCell.swift */,
+				DFF669791C16AE4B007AEF46 /* MemeDVC.swift */,
 				DF9FAFD71C0CA10700AB41C4 /* Info.plist */,
 			);
 			path = MemeMeV2.0;
@@ -278,6 +281,7 @@
 				DF9FAFFE1C0CA17100AB41C4 /* MemeMeViewController.swift in Sources */,
 				DF9FAFFB1C0CA16200AB41C4 /* Meme.swift in Sources */,
 				DF9FB0301C0CAD7100AB41C4 /* MemeMeCollectionVC.swift in Sources */,
+				DFF6697A1C16AE4B007AEF46 /* MemeDVC.swift in Sources */,
 				DF9FAFCA1C0CA10700AB41C4 /* AppDelegate.swift in Sources */,
 				DF1ECC2C1C109599003431ED /* MemeTableVC.swift in Sources */,
 				DF1ECC2E1C109D4F003431ED /* MemeTVCell.swift in Sources */,

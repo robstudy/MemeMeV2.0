@@ -25,5 +25,5 @@ class MemeTVCell: UITableViewCell {
         // Configure the view for the selected state
         memeText.editable = false
     }
-
+    
 }
