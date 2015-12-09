@@ -17,6 +17,7 @@ class MemeDVC: UIViewController {
         super.viewDidLoad()
 
         memeImage.image = holdImage
+        memeImage.contentMode = UIViewContentMode.ScaleAspectFit
     }
 
     override func didReceiveMemoryWarning() {

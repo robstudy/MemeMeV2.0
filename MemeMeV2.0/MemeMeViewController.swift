@@ -19,7 +19,6 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
     var memeImage: UIImage?
-    //var memeModel:Meme = Meme()
     let imagePicker = UIImagePickerController()
     
     //MARK: - View Controls
@@ -30,6 +29,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         imagePicker.delegate = self
         setTextFields(topTextView, defaultText: "TOP")
         setTextFields(bottomTextView, defaultText: "BOTTOM")
+        pickImage.contentMode = UIViewContentMode.ScaleAspectFit
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -58,14 +58,14 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     //Pick from an album
     @IBAction func pickAnImageFromAlbum(sender:AnyObject){
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        pickImage.contentMode = UIViewContentMode.ScaleAspectFill
+        //pickImage.contentMode = UIViewContentMode.ScaleAspectFit
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     //Pick from a camera
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        pickImage.contentMode = UIViewContentMode.ScaleAspectFill
+        //pickImage.contentMode = UIViewContentMode.ScaleAspectFit
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
@@ -158,7 +158,12 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         //Hide ToolBars when generating image
         picToolBar.hidden = true
         stateToolBar.hidden = true
-        pickImage.contentMode = UIViewContentMode.ScaleAspectFill
+        
+        //Remove First Responder From TextFields
+        topTextView.resignFirstResponder()
+        bottomTextView.resignFirstResponder()
+        
+        pickImage.contentMode = UIViewContentMode.ScaleAspectFit
         
         //Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -174,18 +179,10 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     }
     
     func saveMeme(){
-        /*memeModel.topText = topTextView.text
-        memeModel.bottomText = bottomTextView.text
-        memeModel.image = pickImage.image
-        memeModel.memeImage = memeImage*/
         let meme = Meme(topText: topTextView.text!, bottomText: bottomTextView.text!, image: pickImage.image, memeImage: memeImage)
         
         //Add new Meme to array on the Application Delegate
         (UIApplication.sharedApplication().delegate as!AppDelegate).memes.append(meme)
-        
-        print("Saved")
-        
-        //print("\((UIApplication.sharedApplication().delegate as!AppDelegate).memes))")
     }
     
     @IBAction func shareImage(sender: UIBarButtonItem) {
