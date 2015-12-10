@@ -12,14 +12,19 @@ private let reuseIdentifier = "memeCell"
 
 class MemeMeCollectionVC: UICollectionViewController {
     
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
-    var sendMemeImage: UIImage?
-    
     var memes: [Meme]!{
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
     }
+    
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    
+    //data to pass to MemeMeDVC
+    var sendMemeImage: UIImage?
+    var sendImageNoText: UIImage?
+    var sendTopText: String?
+    var sendBottomText: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,8 +78,7 @@ class MemeMeCollectionVC: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let meme = memes[indexPath.item]
         
-        let imageView = UIImageView(image: meme.memeImage)
-        setDataImage(imageView.image!)
+        passDataToMemeDVC(meme.memeImage!, regImage: meme.image!, topText: meme.topText, bottomText: meme.bottomText)
         
         performSegueWithIdentifier("showMemeImage", sender: self)
     }
@@ -84,12 +88,17 @@ class MemeMeCollectionVC: UICollectionViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showMemeImage"){
             let memeDVC:MemeDVC = segue.destinationViewController as! MemeDVC
-            let data = sendMemeImage
-            memeDVC.holdImage = data
+            memeDVC.holdImage = sendMemeImage
+            memeDVC.holdBlankImage = sendImageNoText
+            memeDVC.holdTopText = sendTopText
+            memeDVC.holdBottomText = sendBottomText
         }
     }
     
-    func setDataImage(sendImage: UIImage){
-        sendMemeImage = sendImage
+    func passDataToMemeDVC(sendCompleteImage: UIImage, regImage: UIImage, topText: String, bottomText:String){
+        sendMemeImage = sendCompleteImage
+        sendImageNoText = regImage
+        sendTopText = topText
+        sendBottomText = bottomText
     }
 }

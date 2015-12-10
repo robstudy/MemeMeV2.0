@@ -21,6 +21,9 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     var memeImage: UIImage?
     let imagePicker = UIImagePickerController()
     
+    //To keep track of which view controller called MemeMeViewController
+    var calledByMemeDVC = false
+    
     //MARK: - View Controls
     
     override func viewDidLoad() {

@@ -16,7 +16,11 @@ class MemeTableVC: UITableViewController {
         return appDelegate.memes
     }
     
+    //data to pass to MemeMeDVC
     var sendMemeImage: UIImage?
+    var sendImageNoText: UIImage?
+    var sendTopText: String?
+    var sendBottomText: String?
     
     // MARK: - Loaded Views
 
@@ -62,7 +66,7 @@ class MemeTableVC: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let meme = memes[indexPath.item]
-        setDataImage(meme.memeImage!)
+        passDataToMemeDVC(meme.memeImage!, regImage: meme.image!, topText: meme.topText, bottomText: meme.bottomText)
         performSegueWithIdentifier("showMemeImage", sender: self)
     }
     
@@ -92,15 +96,17 @@ class MemeTableVC: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showMemeImage"){
             let memeDVC:MemeDVC = segue.destinationViewController as! MemeDVC
-            let data = sendMemeImage
-            memeDVC.holdImage = data
+            memeDVC.holdImage = sendMemeImage
+            memeDVC.holdBlankImage = sendImageNoText
+            memeDVC.holdTopText = sendTopText
+            memeDVC.holdBottomText = sendBottomText
         }
     }
     
-    func setDataImage(sendImage: UIImage){
-        sendMemeImage = sendImage
+    func passDataToMemeDVC(sendCompleteImage: UIImage, regImage: UIImage, topText: String, bottomText:String){
+        sendMemeImage = sendCompleteImage
+        sendImageNoText = regImage
+        sendTopText = topText
+        sendBottomText = bottomText
     }
-    
-
-
 }

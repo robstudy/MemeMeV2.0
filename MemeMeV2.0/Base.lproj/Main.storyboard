@@ -314,7 +314,7 @@
                     <navigationItem key="navigationItem" title="Meme" id="uly-Vs-itA">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="dEE-Lq-1h6">
                             <connections>
-                                <segue destination="cVt-ku-uaW" kind="presentation" id="Vf7-oG-z5i"/>
+                                <segue destination="cVt-ku-uaW" kind="presentation" identifier="editMeme" id="Vf7-oG-z5i"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
