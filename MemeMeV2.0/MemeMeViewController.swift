@@ -58,14 +58,12 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     //Pick from an album
     @IBAction func pickAnImageFromAlbum(sender:AnyObject){
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        //pickImage.contentMode = UIViewContentMode.ScaleAspectFit
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
     //Pick from a camera
     @IBAction func pickAnImageFromCamera(sender: AnyObject) {
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        //pickImage.contentMode = UIViewContentMode.ScaleAspectFit
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
