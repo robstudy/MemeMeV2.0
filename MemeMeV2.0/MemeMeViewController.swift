@@ -24,15 +24,27 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
     //To keep track of which view controller called MemeMeViewController
     var calledByMemeDVC = false
     
+    //set image, topText, bottomText if calledByMemeDVC
+    var memesArray = (UIApplication.sharedApplication().delegate as!AppDelegate).memes
+    var indexFromMemeDVC = 0
+    
     //MARK: - View Controls
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         imagePicker.delegate = self
-        setTextFields(topTextView, defaultText: "TOP")
-        setTextFields(bottomTextView, defaultText: "BOTTOM")
         pickImage.contentMode = UIViewContentMode.ScaleAspectFit
+        
+        if(calledByMemeDVC == true){
+            let loadedMeme = memesArray[indexFromMemeDVC]
+            setTextFields(topTextView, defaultText: loadedMeme.topText)
+            setTextFields(bottomTextView, defaultText: loadedMeme.bottomText)
+            pickImage.image = loadedMeme.image
+        } else {
+            setTextFields(topTextView, defaultText: "TOP")
+            setTextFields(bottomTextView, defaultText: "BOTTOM")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -183,7 +195,11 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         let meme = Meme(topText: topTextView.text!, bottomText: bottomTextView.text!, image: pickImage.image, memeImage: memeImage)
         
         //Add new Meme to array on the Application Delegate
-        (UIApplication.sharedApplication().delegate as!AppDelegate).memes.append(meme)
+        if(calledByMemeDVC == true){
+            (UIApplication.sharedApplication().delegate as!AppDelegate).memes.insert(meme, atIndex: indexFromMemeDVC)
+        } else {
+            (UIApplication.sharedApplication().delegate as!AppDelegate).memes.append(meme)
+        }
     }
     
     @IBAction func shareImage(sender: UIBarButtonItem) {

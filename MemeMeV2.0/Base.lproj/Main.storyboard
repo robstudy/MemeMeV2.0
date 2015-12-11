@@ -314,18 +314,19 @@
                     <navigationItem key="navigationItem" title="Meme" id="uly-Vs-itA">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="dEE-Lq-1h6">
                             <connections>
-                                <segue destination="cVt-ku-uaW" kind="presentation" identifier="editMeme" id="Vf7-oG-z5i"/>
+                                <action selector="editMeme:" destination="VBD-ZN-HhO" id="xZ0-qx-NkP"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="memeImage" destination="ROf-O5-NKH" id="c3I-PS-0IE"/>
+                        <segue destination="cVt-ku-uaW" kind="presentation" identifier="editMeme" id="nqw-xG-skK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAw-c2-LFm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="-104"/>
+            <point key="canvasLocation" x="1461" y="-115"/>
         </scene>
     </scenes>
     <resources>
@@ -333,7 +334,7 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vf7-oG-z5i"/>
         <segue reference="Q5f-y1-ioT"/>
+        <segue reference="nqw-xG-skK"/>
     </inferredMetricsTieBreakers>
 </document>

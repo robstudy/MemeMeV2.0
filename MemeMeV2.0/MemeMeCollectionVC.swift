@@ -21,10 +21,7 @@ class MemeMeCollectionVC: UICollectionViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     //data to pass to MemeMeDVC
-    var sendMemeImage: UIImage?
-    var sendImageNoText: UIImage?
-    var sendTopText: String?
-    var sendBottomText: String?
+    var sendIndex = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,9 +73,9 @@ class MemeMeCollectionVC: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let meme = memes[indexPath.item]
+        let index = indexPath.row
         
-        passDataToMemeDVC(meme.memeImage!, regImage: meme.image!, topText: meme.topText, bottomText: meme.bottomText)
+        passDataToMemeDVC(index)
         
         performSegueWithIdentifier("showMemeImage", sender: self)
     }
@@ -88,17 +85,11 @@ class MemeMeCollectionVC: UICollectionViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showMemeImage"){
             let memeDVC:MemeDVC = segue.destinationViewController as! MemeDVC
-            memeDVC.holdImage = sendMemeImage
-            memeDVC.holdBlankImage = sendImageNoText
-            memeDVC.holdTopText = sendTopText
-            memeDVC.holdBottomText = sendBottomText
+            memeDVC.holdIndex = sendIndex
         }
     }
     
-    func passDataToMemeDVC(sendCompleteImage: UIImage, regImage: UIImage, topText: String, bottomText:String){
-        sendMemeImage = sendCompleteImage
-        sendImageNoText = regImage
-        sendTopText = topText
-        sendBottomText = bottomText
+    func passDataToMemeDVC(index: Int){
+        sendIndex = index
     }
 }
