@@ -22,6 +22,8 @@ class MemeMeCollectionVC: UICollectionViewController {
     
     //data to pass to MemeMeDVC
     var sendIndex = 0
+    
+    //MARK: - View Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +49,7 @@ class MemeMeCollectionVC: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: UICollectionViewDataSource
+    // MARK: - UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1

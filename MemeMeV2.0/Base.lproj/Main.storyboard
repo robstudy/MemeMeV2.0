@@ -84,7 +84,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="VBD-ZN-HhO" kind="push" identifier="showMemeImage" id="Q5f-y1-ioT"/>
+                        <segue destination="VBD-ZN-HhO" kind="show" identifier="showMemeImage" id="Q5f-y1-ioT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vCm-bZ-lZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,7 +139,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="memeCell" id="n71-Di-2oq" customClass="MemeCollectionViewCell" customModule="MemeMeV2_0" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="memeCell" id="n71-Di-2oq" customClass="MemeCollectionViewCell" customModule="MemeMeV2_0" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="134" height="137"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -335,6 +335,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Q5f-y1-ioT"/>
-        <segue reference="nqw-xG-skK"/>
+        <segue reference="kwV-uM-2hg"/>
     </inferredMetricsTieBreakers>
 </document>

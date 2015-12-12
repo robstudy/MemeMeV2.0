@@ -9,5 +9,5 @@
 import UIKit
 
 class MemeCollectionViewCell: UICollectionViewCell {
-    
+    //keeping custom class for later iterations
 }

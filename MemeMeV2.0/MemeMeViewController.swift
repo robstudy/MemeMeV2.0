@@ -82,12 +82,8 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
-    //Cancel button resets screen to initial state
+    //Cancel button dismiesses view controller
     @IBAction func cancelButton(sender: UIBarButtonItem){
-        pickImage.image = nil
-        topTextView.text = "TOP"
-        bottomTextView.text = "BOTTOM"
-        shareButton.enabled = false
         dismissViewControllerAnimated(true, completion: nil)
     }
     

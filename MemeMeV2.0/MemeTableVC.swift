@@ -19,7 +19,7 @@ class MemeTableVC: UITableViewController {
     //data to pass to MemeMeDVC
     var sendIndex = 0
     
-    // MARK: - Loaded Views
+    // MARK: - View Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,6 +71,7 @@ class MemeTableVC: UITableViewController {
     
     override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Delete" , handler: { (action:UITableViewRowAction!, indexPath:NSIndexPath!) -> Void in
+            //get indexPath and delete cell at indexPath
             let memeIndex = indexPath.item
             (UIApplication.sharedApplication().delegate as!AppDelegate).memes.removeAtIndex(memeIndex)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
