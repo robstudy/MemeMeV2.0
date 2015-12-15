@@ -192,6 +192,7 @@ class MemeMeViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         //Add new Meme to array on the Application Delegate
         if(calledByMemeDVC == true){
+            (UIApplication.sharedApplication().delegate as!AppDelegate).memes.removeAtIndex(indexFromMemeDVC)//remove old meme
             (UIApplication.sharedApplication().delegate as!AppDelegate).memes.insert(meme, atIndex: indexFromMemeDVC)
         } else {
             (UIApplication.sharedApplication().delegate as!AppDelegate).memes.append(meme)
